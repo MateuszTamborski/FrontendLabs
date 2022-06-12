@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'nav-color': '#5d5b5c'
+        'nav-color': '#5d5b5c',
+        'red-rgba': 'rgba(70, 0, 70, 0.7)',
       }
     },
   },
