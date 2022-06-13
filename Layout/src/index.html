@@ -15,13 +15,13 @@
 
 <body>
   <nav class="p-[30px]">
-    <div class="flex justify-center items-center box-border w-full">
-      <img class="w-[200px] mr-[20px]" src="/assets/logo.png" alt="">
+    <div class="flex flex-col lg:flex-row justify-center items-center box-border w-full">
+      <img class="w-[200px] mr-5" src="/assets/logo.png" alt="">
 
-      <div>
+      <div class="w-full pt-5 lg:pt-0 lg:w-[800px]">
         <img src="/assets/divider.svg">
-        <ul class="flex list-disc space-x-8 uppercase font-roboto font-bold text-red-800">
-          <li class="list-none">
+        <ul class="flex flex-col items-center md:flex-row md:justify-center list-disc md:space-x-8 uppercase font-roboto font-bold text-red-800">
+          <li class="md:list-none">
             <a href="#signs">Signs</a>
           </li>
           <li>
@@ -59,23 +59,23 @@
       <img class="w-[600px] px-10 object-cover rotate-180" src="/assets/divider.svg">
     </div>
 
-    <div class="flex flex-col items-center font-roboto">
+    <div class="w-full px-10 flex flex-col items-center font-roboto">
 
-      <p class="w-[1000px] text-justify pb-4">
+      <div class="max-w-[1000px] text-justify pb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore facilis doloremque eaque animi nesciunt temporibus deleniti qui, similique doloribus suscipit culpa voluptates corrupti amet quibusdam et quisquam quos aliquam dolor.
         Minima molestias perspiciatis fugit iusto laboriosam hic magnam et? Eos cumque nulla dignissimos voluptatem numquam molestiae id possimus pariatur repellendus quibusdam asperiores, voluptate sapiente, ducimus quo rem quidem ab consequuntur!
         Excepturi officia nobis tempore tenetur? Deleniti obcaecati et delectus velit enim iure, earum suscipit tenetur aliquam beatae, corporis magnam quasi assumenda. Facilis aut id error cum fugiat unde quis hic.
-      </p>
+      </div>
 
-      <p class="w-[1000px] text-justify pb-4">
+      <div class="max-w-[1000px] text-justify pb-4">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad dicta consequatur quaerat repellat sint, eligendi dolor minus animi vero saepe aspernatur maiores eius quod ea ipsa explicabo in illum. Fugiat?
         Voluptas officia amet est dicta maxime nisi quaerat sed minus reprehenderit officiis provident recusandae saepe labore aliquid voluptatem modi, ab, atque quia. In, sapiente excepturi! Placeat laudantium exercitationem optio a.
         Error cum magnam reprehenderit accusamus sit.
-      </p>
+      </div>
 
-      <p class="w-[1000px] text-justify pb-4">
+      <div class="max-w-[1000px] text-justify pb-4">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus perspiciatis laborum explicabo! Quis ipsum doloremque ad saepe, ea sunt minima quia repellendus quisquam inventore dignissimos, tempore consequatur? Velit, nostrum eligendi!
-      </p>
+      </div>
 
       <img class="w-[30px] pt-10 pb-10" src="/assets/chevron-down.svg">
     </div>
@@ -89,57 +89,65 @@
     </div>
 
     <div class="w-full flex flex-col justify-center items-center">
-      <div class="flex flex-row">
+      <div class="flex flex-col lg:flex-row">
+        
+        <div class="flex flex-col md:flex-row">
+          <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
+            <img class="w-[200px] shadow-2xl" src="/assets/aard_format.jpg">
+          </div>
 
-        <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
-          <img class="w-[200px] shadow-2xl" src="/assets/aard_format.jpg">
+          <div class="p-5 m-2 font-roboto flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-red-800 pb-2">Aard</h3>
+            <p class="w-[200px] text-xs pb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
+            </p>
+            <img class="w-[20px]" src="/assets/chevron-down.svg">
+          </div>
         </div>
 
-        <div class="p-5 m-2 font-roboto flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-red-800 pb-2">Aard</h3>
-          <p class="w-[200px] text-xs pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
-          </p>
-          <img class="w-[20px]" src="/assets/chevron-down.svg">
-        </div>
+        <div class="flex flex-col md:flex-row">
+          <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
+            <img class="w-[200px]" src="/assets/igni_format.jpg">
+          </div>
 
-        <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
-          <img class="w-[200px]" src="/assets/igni_format.jpg">
-        </div>
-
-        <div class="p-5 m-2 font-roboto flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-red-800 pb-2">Igni</h3>
-          <p class="w-[200px] text-xs pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
-          </p>
-          <img class="w-[20px]" src="/assets/chevron-down.svg">
+          <div class="p-5 m-2 font-roboto flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-red-800 pb-2">Igni</h3>
+            <p class="w-[200px] text-xs pb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
+            </p>
+            <img class="w-[20px]" src="/assets/chevron-down.svg">
+          </div>
         </div>
       </div>
 
-      <div class="flex flex-row-reverse">
+      <div class="flex flex-col lg:flex-row">
 
-        <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
-          <img class="w-[200px]" src="/assets/axii_format.jpg">
+        <div class="flex flex-col md:flex-row lg:flex-row-reverse">
+          <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
+            <img class="w-[200px]" src="/assets/axii_format.jpg">
+          </div>
+
+          <div class="p-5 m-2 font-roboto flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-red-800 pb-2">Axii</h3>
+            <p class="w-[200px] text-xs pb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
+            </p>
+            <img class="w-[20px]" src="/assets/chevron-down.svg">
+          </div>
         </div>
 
-        <div class="p-5 m-2 font-roboto flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-red-800 pb-2">Axii</h3>
-          <p class="w-[200px] text-xs pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
-          </p>
-          <img class="w-[20px]" src="/assets/chevron-down.svg">
-        </div>
+        <div class="flex flex-col md:flex-row lg:flex-row-reverse">
+          <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
+            <img class="w-[200px]" src="/assets/quen_format.jpg">
+          </div>
 
-        <div class="p-5 m-2 box-border border-2 border-solid border-red-800 border-opacity-70">
-          <img class="w-[200px]" src="/assets/quen_format.jpg">
-        </div>
-
-        <div class="p-5 m-2 font-roboto flex flex-col justify-center">
-          <h3 class="text-lg font-bold text-red-800 pb-2">Quen</h3>
-          <p class="w-[200px] text-xs pb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
-          </p>
-          <img class="w-[20px]" src="/assets/chevron-down.svg">
+          <div class="p-5 m-2 font-roboto flex flex-col justify-center">
+            <h3 class="text-lg font-bold text-red-800 pb-2">Quen</h3>
+            <p class="w-[200px] text-xs pb-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dolorum nisi impedit illo aliquam repudiandae commod.
+            </p>
+            <img class="w-[20px]" src="/assets/chevron-down.svg">
+          </div>
         </div>
       </div>
 
@@ -154,49 +162,49 @@
       <img class="w-[600px] px-10 object-cover rotate-180" src="/assets/divider.svg">
     </div>
 
-    <div class="flex flex-col items-center font-roboto">
+    <div class="flex flex-col items-center font-roboto px-10">
 
-      <div class="flex flex-row">
-        <div class="w-[150px] font-bold text-right text-red-800 pr-4">
+      <div class="flex flex-col items-center md:flex-row md:items-start">
+        <div class="w-full text-center font-bold text-red-800 md:w-[150px] md:text-right md:pr-4">
           Our goal:
         </div>
-        <div class="w-[700px]">
+        <div class="pb-4 text-center md:text-justify md:pb-0 md:w-[400px] lg:w-[700px]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero soluta architecto dolor aperiam delectus possimus molestiae accusamus ut obcaecati odio, repellendus molestias fugit eum necessitatibus tempora libero numquam? Molestiae, id?
         </div>
       </div>
 
-      <div class="flex flex-row">
-        <div class="w-[150px] font-bold text-right text-red-800 pr-4">
+      <div class="flex flex-col items-center md:flex-row md:items-start">
+        <div class="w-full text-center font-bold text-red-800 md:w-[150px] md:text-right md:pr-4">
           Target group:
         </div>
-        <div class="w-[700px]">
+        <div class="pb-4 text-center md:text-justify md:pb-0 md:w-[400px] lg:w-[700px]">
           Lorem, ipsum, dolort
         </div>
       </div>
 
-      <div class="flex flex-row">
-        <div class="w-[150px] font-bold text-right text-red-800 pr-4">
+      <div class="flex flex-col items-center md:flex-row md:items-start">
+        <div class="w-full text-center font-bold text-red-800 md:w-[150px] md:text-right md:pr-4">
           Training scope:
         </div>
-        <div class="w-[700px]">
+        <div class="pb-4 text-center md:text-justify md:pb-0 md:w-[400px] lg:w-[700px]">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum velit quibusdam perspiciatis, sapiente maiores, minus necessitatibus autem saepe nihil ipsum architecto omnis amet quis veniam fugit dolorum consequatur doloremque exercitationem.
         </div>
       </div>
 
-      <div class="flex flex-row">
-        <div class="w-[150px] font-bold text-right text-red-800 pr-4">
+      <div class="flex flex-col items-center md:flex-row md:items-start">
+        <div class="w-full text-center font-bold text-red-800 md:w-[150px] md:text-right md:pr-4">
           Leaders:
         </div>
-        <div class="w-[700px]">
+        <div class="pb-4 text-center md:text-justify md:pb-0 md:w-[400px] lg:w-[700px]">
           Vesemir, Geralt, Lambert, Eskel
         </div>
       </div>
 
-      <div class="flex flex-row">
-        <div class="w-[150px] font-bold text-right text-red-800 pr-4">
+      <div class="flex flex-col items-center md:flex-row md:items-start">
+        <div class="w-full text-center font-bold text-red-800 md:w-[150px] md:text-right md:pr-4">
           Address:
         </div>
-        <div class="w-[700px]">
+        <div class="pb-4 text-center md:text-justify md:pb-0 md:w-[400px] lg:w-[700px]">
           Kaer Morhen, Morhen Valley, Kaedwen
         </div>
       </div>
@@ -214,7 +222,7 @@
       <img class="w-[600px] pl-[40px] pr-[40px] object-cover rotate-180" src="/assets/divider.svg">
     </div>
 
-    <div class="grid grid-cols-3 gap-4 pb-10 px-10 max-w-[1200px] mx-auto">
+    <div class="grid grid-cols-1 grid-row-6 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-4 pb-10 px-10 max-w-[1200px] mx-auto">
 
       <div class="relative w-full h-full bg-no-repeat bg-cover shadow-2xl pt-[100%]" 
            style="background-image: url('/assets/chort.png');">
@@ -271,29 +279,34 @@
       <img class="w-full h-[400px] object-cover" src="/assets/alchemy-bg.jpg" alt="">
     </div>
 
-    <div class="absolute top-0 left-0 w-full h-full pt-10">
+    <div class="absolute top-0 left-0 w-full">
       <div class="flex flex-col items-center pt-[20px] pb-[40px]">
         <img class="w-[600px] pl-[40px] pr-[40px] object-cover" src="/assets/divider.svg">
         <h1 class="py-2 text-4xl uppercase font-roboto">Alchemy</h1>
         <img class="w-[600px] pl-[40px] pr-[40px] object-cover rotate-180" src="/assets/divider.svg">
       </div>
 
-      <div class="flex max-w-[1200px] mx-auto justify-center">
-        <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
-          <img src="/assets/potion.png" alt="">
-          <p class="font-bold pt-2 text-xl">Potions</p>
+      <div class="w-full flex justify-center">
+        <div class="flex flex-col md:flex-row">
+          <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
+            <img class="w-[50px] lg:w-[200px]" src="/assets/potion.png" alt="">
+            <p class="font-bold pt-2 text-xl">Potions</p>
+          </div>
+          <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
+            <img class="w-[50px] lg:w-[200px]" src="/assets/oil.png" alt="">
+            <p class="font-bold pt-2 text-xl">Oils</p>
+          </div>
         </div>
-        <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
-          <img src="/assets/oil.png" alt="">
-          <p class="font-bold pt-2 text-xl">Oils</p>
-        </div>
-        <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
-          <img src="/assets/decoction.png" alt="">
-          <p class="font-bold pt-2 text-xl">Decoctions</p>
-        </div>
-        <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
-          <img src="/assets/bomb.png" alt="">
-          <p class="font-bold pt-2 text-xl">Bombs</p>
+
+        <div class="flex flex-col md:flex-row">
+          <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
+            <img class="w-[50px] lg:w-[200px]" src="/assets/decoction.png" alt="">
+            <p class="font-bold pt-2 text-xl">Decoctions</p>
+          </div>
+          <div class="flex flex-col items-center mx-4 px-8 max-h-[160px] max-w-[160px]">
+            <img class="w-[50px] lg:w-[200px]" src="/assets/bomb.png" alt="">
+            <p class="font-bold pt-2 text-xl">Bombs</p>
+          </div>
         </div>
       </div>
     </div>
@@ -306,7 +319,9 @@
       <img class="w-[600px] px-10 object-cover rotate-180" src="/assets/divider.svg">
     </div>
 
-    <div class="grid grid-cols-3 grid-rows-3 pb-[40px] max-w-[800px] mx-auto px-4 font-roboto">
+    <div class="grid grid-cols-1 grid-rows-9 max-w-[400px] pb-[40px] mx-auto px-4 font-roboto
+                md:grid-cols-2 md:grid-rows-5 md:max-w-[600px]
+                lg:grid-cols-3 lg:grid-rows-3 lg:max-w-[800px]">
       <div class="p-[20px] relative flex items-center box-border">
         <img class="w-[20px] absolute top-[-10px] left-[-10px]" src="/assets/plus.svg" alt="">
         <img class="w-[20px] absolute top-[-10px] right-[-10px]" src="/assets/plus.svg" alt="">
@@ -387,10 +402,18 @@
       <img class="w-[600px] pl-[40px] pr-[40px] object-cover rotate-180" src="/assets/divider.svg">
     </div>
 
-    <div class="flex justify-center font-roboto font-bold text-2xl text-red-800 pb-4">
-      <div class="flex flex-col items-center p-4 mx-4">
-        <p>Organisers</p>
-        <img src="/assets/wolf-school.png" alt="">
+    <div class="flex flex-col justify-center font-roboto font-bold text-2xl text-red-800 pb-4 lg:flex-row">
+      
+      <div class="flex flex-col md:flex-row md:justify-center">
+        <div class="flex flex-col items-center p-4 mx-4">
+          <p>Organisers</p>
+          <img src="/assets/wolf-school.png" alt="">
+        </div>
+
+        <div class="flex flex-col items-center p-4 mx-4">
+          <p>Sponsors</p>
+          <img src="/assets/bear-school.png" alt="">
+        </div>
       </div>
 
       <div class="flex flex-col items-center p-4 mx-4">
@@ -399,11 +422,6 @@
           <img src="/assets/cat-school.png" alt="">
           <img src="/assets/gryffin-school.png" alt="">
         </div>
-      </div>
-
-      <div class="flex flex-col items-center p-4 mx-4">
-        <p>Sponsors</p>
-        <img src="/assets/bear-school.png" alt="">
       </div>
     </div>
 
