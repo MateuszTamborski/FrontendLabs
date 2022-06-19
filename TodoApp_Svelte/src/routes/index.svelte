@@ -1,22 +1,54 @@
 <script>
+	import { onMount } from 'svelte'
+
   let todos = []
   let task = "";
 	let filter='all';
 
-	function addTask(){
+	onMount(async () => {
+		const response = await fetch('http://localhost:4000/api/todos')
+		todos = await response.json()
+	})
+
+	async function postTodo() {
+		const res = await fetch(`http://localhost:4000/api/todos/`, {
+			headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+      body: JSON.stringify({
+				text: task,
+				done: false 
+			})
+		})
+		await res.json()
+	}
+
+	async function putTodo(i) {
+	const res =	await fetch(`http://localhost:4000/api/todos/${i}`,
+    {
+			headers: { 'Content-Type': 'application/json' },
+      method: 'PUT',
+      body: JSON.stringify({
+				text: todos[i].task,
+				done: !todos[i].done
+			})
+    })
+		await res.json()
+	}
+
+	function addTask() {
+		postTodo()
+		
 		todos = [{
-			task:task,
-			status:"incomplete"
+			text: task,
+			done: false
 		}, ...todos];
+
 		task = "";
 	}
 
-	function markComplete(i){
-		if (todos[i].status === "incomplete") {
-			todos[i].status = "completed";
-		} else {
-			todos[i].status = "incomplete"
-		}
+	function markComplete(id, i){
+		putTodo(id)
+		todos[i].done = !todos[i].done
 		todos = [...todos];
 	}
 
@@ -168,9 +200,9 @@
 			{#each todos as todo, i}
 				{#if filter=='all'}
 					<div class="task">
-						<div class="desc">{todo.task}</div>
+						<div class="desc">{todo.text}</div>
 						<div class="buttons">
-							<button class="{todo.status == 'completed' ? 'active' : ''}" on:click={() => {markComplete(i)}}>
+							<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(todo._id, i) }}>
 								<img src="/check-circle.svg" alt="ok"/>
 							</button>
 							<button on:click={() => { removeTask(i)}}>
@@ -178,10 +210,10 @@
 							</button>
 						</div>
 					</div>
-				{:else if filter=='completed'}
-					{#if todo.status=='completed'}
+				{:else if filter == 'completed'}
+					{#if todo.done == true}
 						<div class="task">
-							<div class="desc">{todo.task}</div>
+							<div class="desc">{todo.text}</div>
 							<div class="buttons">
 								<button on:click={() => {removeTask(i)}}>
 									<img src="/trash3-fill.svg" alt="x"/>
@@ -190,11 +222,11 @@
 						</div>
 					{/if}
 				{:else}
-					{#if todo.status=='incomplete'}
+					{#if todo.status == false}
 						<div class="task">
-							<div class="desc">{todo.task}</div>
+							<div class="desc">{todo.text}</div>
 							<div class="buttons">
-								<button class="{todo.status=='completed'?'active':''}" on:click={() => {markComplete(i)}}>
+								<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(i) }}>
 									<img src="/check-circle-fill.svg" alt="ok"/>
 								</button>
 							</div>
