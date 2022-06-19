@@ -22,8 +22,8 @@
 		await res.json()
 	}
 
-	async function putTodo(i) {
-	const res =	await fetch(`http://localhost:4000/api/todos/${i}`,
+	async function putTodo(id, i) {
+	const res =	await fetch(`http://localhost:4000/api/todos/${id}`,
     {
 			headers: { 'Content-Type': 'application/json' },
       method: 'PUT',
@@ -32,6 +32,14 @@
 				done: !todos[i].done
 			})
     })
+		await res.json()
+	}
+
+	async function deleteTodo(id) {
+		const res = await fetch(`http://localhost:4000/api/todos/${id}`, 
+			{ 
+				method: 'DELETE' 
+			})
 		await res.json()
 	}
 
@@ -47,12 +55,13 @@
 	}
 
 	function markComplete(id, i){
-		putTodo(id)
+		putTodo(id, i)
 		todos[i].done = !todos[i].done
 		todos = [...todos];
 	}
 
-	function removeTask(i){
+	function removeTask(id, i){
+		deleteTodo(id)
 		todos.splice(i,1);
 		todos = [...todos];
 	}
@@ -205,7 +214,7 @@
 							<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(todo._id, i) }}>
 								<img src="/check-circle.svg" alt="ok"/>
 							</button>
-							<button on:click={() => { removeTask(i)}}>
+							<button on:click={() => { removeTask(todo._id, i)}}>
 								<img src="/trash3-fill.svg" alt="x"/>
 							</button>
 						</div>
@@ -215,7 +224,7 @@
 						<div class="task">
 							<div class="desc">{todo.text}</div>
 							<div class="buttons">
-								<button on:click={() => {removeTask(i)}}>
+								<button on:click={() => {removeTask(todo._id, i)}}>
 									<img src="/trash3-fill.svg" alt="x"/>
 								</button>
 							</div>
@@ -226,7 +235,7 @@
 						<div class="task">
 							<div class="desc">{todo.text}</div>
 							<div class="buttons">
-								<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(i) }}>
+								<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(todo._id, i) }}>
 									<img src="/check-circle-fill.svg" alt="ok"/>
 								</button>
 							</div>
