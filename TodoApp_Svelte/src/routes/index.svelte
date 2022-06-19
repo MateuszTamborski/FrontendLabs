@@ -6,8 +6,8 @@
 	let filter='all';
 
 	onMount(async () => {
-		const response = await fetch('http://localhost:4000/api/todos')
-		todos = await response.json()
+		const res = await fetch('http://localhost:4000/api/todos')
+		todos = await res.json()
 	})
 
 	async function postTodo() {
@@ -19,7 +19,7 @@
 				done: false 
 			})
 		})
-		await res.json()
+		todos = await res.json()
 	}
 
 	async function putTodo(id, i) {
@@ -32,7 +32,7 @@
 				done: !todos[i].done
 			})
     })
-		await res.json()
+		todos = await res.json();
 	}
 
 	async function deleteTodo(id) {
@@ -40,32 +40,13 @@
 			{ 
 				method: 'DELETE' 
 			})
-		await res.json()
+		todos = await res.json()
 	}
 
 	function addTask() {
 		postTodo()
-		
-		todos = [{
-			text: task,
-			done: false
-		}, ...todos];
-
 		task = "";
 	}
-
-	function markComplete(id, i){
-		putTodo(id, i)
-		todos[i].done = !todos[i].done
-		todos = [...todos];
-	}
-
-	function removeTask(id, i){
-		deleteTodo(id)
-		todos.splice(i,1);
-		todos = [...todos];
-	}
-
 </script>
   
 <style>
@@ -80,6 +61,7 @@
 		width: 100vw;
 		background-color: rgb(192, 192, 192);
 		font-family: 'Fira Code', monospace;
+		overflow-x: auto;
 	}
 
 	header {
@@ -211,10 +193,10 @@
 					<div class="task">
 						<div class="desc">{todo.text}</div>
 						<div class="buttons">
-							<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(todo._id, i) }}>
+							<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { putTodo(todo._id, i) }}>
 								<img src="/check-circle.svg" alt="ok"/>
 							</button>
-							<button on:click={() => { removeTask(todo._id, i)}}>
+							<button on:click={() => { deleteTodo(todo._id)}}>
 								<img src="/trash3-fill.svg" alt="x"/>
 							</button>
 						</div>
@@ -224,18 +206,18 @@
 						<div class="task">
 							<div class="desc">{todo.text}</div>
 							<div class="buttons">
-								<button on:click={() => {removeTask(todo._id, i)}}>
+								<button on:click={() => {deleteTodo(todo._id)}}>
 									<img src="/trash3-fill.svg" alt="x"/>
 								</button>
 							</div>
 						</div>
 					{/if}
 				{:else}
-					{#if todo.status == false}
+					{#if todo.done == false}
 						<div class="task">
 							<div class="desc">{todo.text}</div>
 							<div class="buttons">
-								<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { markComplete(todo._id, i) }}>
+								<button class="{todo.done == true ? 'active' : ''}" on:click={ () => { putTodo(todo._id, i) }}>
 									<img src="/check-circle-fill.svg" alt="ok"/>
 								</button>
 							</div>
