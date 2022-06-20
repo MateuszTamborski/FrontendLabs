@@ -1,0 +1,37 @@
+<!-- Startup -> ng serve -->
+<div class="container">
+  <header>TODO'er</header>
+  <div class="todo">
+
+    <div class="filters">
+			<button (click)="this.filter = 'all'" class="{{ (filter === 'all' ? 'active' : '') }}">All</button>
+			<button (click)="this.filter = 'completed'" class="{{ (filter === 'completed' ? 'active' : '') }}">Completed</button>
+			<button (click)="this.filter = 'incomplete'" class="{{ (filter === 'incomplete' ? 'active' : '') }}">Incomplete</button>
+		</div>
+
+    <div class="form">
+			<input 
+        type="text" 
+        placeholder="To do..."
+        [(ngModel)]="inputText"
+      />
+			<button (click)="postTodo(inputText)" [disabled]="this.inputText.length === 0">Add</button>
+		</div>
+
+    <div class="tasks">
+
+      <div class="task" *ngFor="let todo of filterTodos(todos, filter)">
+        <div class="desc {{ (todo.done === true ? 'active' : '') }}">{{ todo.text }}</div>
+        <div class="buttons">
+          <button (click)="putTodo(todo)" class="{{ (todo.done === true ? 'active' : '') }}">
+            <img src="../assets/check-circle.svg" alt="ok"/>
+          </button>
+          <button (click)="deleteTodo(todo._id)" class="todoTrashBtn">
+            <img src="../assets/trash3-fill.svg" alt="x"/>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div> 
