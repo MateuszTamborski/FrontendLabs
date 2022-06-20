@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from './Todo';
 
 function filterTodos(todos, filter) {
-  switch(filter) {
+  switch (filter) {
     case "completed":
       return todos.filter((todo) => todo.done);
     case "incomplete":
@@ -15,8 +15,8 @@ function filterTodos(todos, filter) {
 function Todos({ todos, deleteTodo, putTodo, filter }) {
   return (
     <div className="tasks">
-      { filterTodos(todos, filter).map((todo) => (
-        <Todo 
+      {filterTodos(todos, filter).map((todo) => (
+        <Todo
           key={todo._id}
           todo={todo}
           deleteTodo={deleteTodo}
