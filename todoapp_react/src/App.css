@@ -45,6 +45,10 @@ button {
 	font-weight: bold;
 }
 
+.filters button.active {
+	background-color: #297ea8;
+}
+
 .filters button:hover {
 	background-color: #297ea8;
 }
@@ -94,6 +98,10 @@ button {
 
 .tasks > .task > .desc {
 	max-width: 300px;
+}
+
+.tasks > .task > .desc.active {
+	text-decoration: line-through;
 }
 
 .tasks > .task > .buttons {
